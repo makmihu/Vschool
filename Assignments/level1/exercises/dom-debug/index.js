@@ -3,10 +3,10 @@ const colors = ["red", "blue", "green"]
 function createDropDown(){
     const dropDown = document.createElement("select")
     for (let i = 0; i < colors; i++){
-        const option = document.createElement("option"); 
-        option.textContent = colors[i];
-        option.value = colors[i];
-        dropDown.append(option);
+        const option = document.createElement("option") 
+        option.textContent = colors[i]
+        option.value = colors[i]
+        dropDown.append(option)
     }
     dropDown.addEventListener(
         "onchange",
@@ -30,6 +30,6 @@ function createSubItem(e){
 document.getElementById("add").addEventListener(
     "click", 
     function(e){
-        const subItem = createSubItem(e);
-        document.getElementById("list").appendChild(subItem);
+        const subItem = createSubItem(e)
+        document.getElementById("list").appendChild(subItem)
 })
