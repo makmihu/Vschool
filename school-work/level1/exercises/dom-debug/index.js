@@ -13,6 +13,7 @@ document.getElementById("add").addEventListener(
         const dropDown = createDropDown()
         subItem.appendChild(dropDown)
         subItem.setAttribute("class", "subItem")
+        subItem.style.backgroundColor = 'red'
         return subItem
     }
     function createDropDown(){
@@ -23,8 +24,9 @@ document.getElementById("add").addEventListener(
             option.value = colors[i]
             dropDown.append(option)
         }
-        dropDown.addEventListener("onchange", (e) => {
-            e.target.parent.backgroundColor = e.target.value
+        dropDown.addEventListener("change", (e) => {
+            console.log(e.target.parentElement)
+            e.target.parentElement.style.backgroundColor = e.target.value
         })
         return dropDown
     }
