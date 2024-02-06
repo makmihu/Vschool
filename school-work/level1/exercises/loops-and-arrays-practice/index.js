@@ -1,16 +1,15 @@
 var officeItems = ["stapler", "monitor", "computer", "desk", "lamp", "computer", "lamp", "stapler", "computer",  "computer"];
 
+var computers = 0;
 
-for(i = 0; i < officeItems.length; i++){
-    var computers = 0
-    if(i = "computer"){
-        computers++
+for(var i = 0; i < officeItems.length; i++){
+    if(officeItems[i] === "computer"){
+        computers++;
     }
-    if(i = officeItems.length - 1){
-        console.log(computers)
+    if(i === officeItems.length - 1){
+        console.log(computers);
     }
-    return computers
-};
+}
 
 
 var peopleWhoWantToSeeMadMaxFuryRoad = [
@@ -38,7 +37,7 @@ var peopleWhoWantToSeeMadMaxFuryRoad = [
   ]
  
   
-// for(i = 0; i < peopleWhoWantToSeeMadMaxFuryRoad.length; i++){
+// for(var i = 0; i < peopleWhoWantToSeeMadMaxFuryRoad.length; i++){
 //     if(peopleWhoWantToSeeMadMaxFuryRoad[i].age >= 18){
 //         console.log("old enough")
 //     } else{
