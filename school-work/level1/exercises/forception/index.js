@@ -11,8 +11,21 @@ var people = ["Jon", "Jacob", "Jingle", "Heimer", "Schmidt"]
 var alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 function forception(people, alphabet){
+
+    const result  = []
+
+    const letters = alphabet.split('')
+    // console.log(letters)
     for(i = 0; i < people.length; i++){
-        console.log(people[i])
+        result.push(people[i])
+        for (j = 0; j <letters.length; j++){
+            result.push(letters[j])
+        }
     }
-    console.log(alphabet)
+    // console.log(alphabet)
+
+
+    return result
 }
+
+console.log(forception(people, alphabet))

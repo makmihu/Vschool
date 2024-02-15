@@ -29,7 +29,7 @@ for(var i = 0; i <= 10; i++){
                 
             }
     } else if(haveKey === 1){
-        const options2 =["Put hand in hole ", "Open the door. "]
+        const options2 =["Put hand in hole. ", "Open the door. "]
         const question2 = readline.keyInSelect(options2, "You found the key. What do you do now?")
         if(options2[question2] === "Put hand in hole. "){
             console.log("You died. Try again")
@@ -40,5 +40,5 @@ for(var i = 0; i <= 10; i++){
             i = 10
         }
 
-} 
+    } 
 }

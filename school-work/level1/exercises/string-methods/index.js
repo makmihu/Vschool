@@ -6,10 +6,11 @@ var string = "HElLo"
 function capilizeAndLowercase(string){
     var stringCap = string.toUpperCase()
     var stringLow = string.toLowerCase()
-    var output = stringCap.concad(stringLow)
-    console.log(output) // ?????
+    var output = stringCap.concat(stringLow)
+    console.log(output) 
     return output
 }
+capilizeAndLowercase(string)
 
 /**2.
  * Write a function that takes a string as a parameter and returns a number that is half the string's length, rounded down.

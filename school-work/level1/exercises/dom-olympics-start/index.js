@@ -33,3 +33,24 @@ document.getElementById('clear-button').addEventListener(
         txtTopRight.textContent = "";
         txtBottomRight.textContent = "";
 })
+
+const dropdown = document.getElementById('theme-drop-down')
+
+const leftM = document.querySelectorAll('.left')
+const rightM = document.querySelectorAll('.right')
+
+console.log(leftM, rightM)
+
+dropdown.addEventListener('change', function(){
+    if(dropdown.value === 'theme-one'){
+        for (let i = 0; i< leftM.length; i++){
+            leftM[i].style.backgroundColor = 'burlywood'
+            rightM[i].style.backgroundColor = 'lightblue'
+        }
+    } else {
+        for (let i = 0; i< leftM.length; i++){
+            leftM[i].style.backgroundColor = 'red'
+            rightM[i].style.backgroundColor = 'black'
+        }
+    }
+})
