@@ -31,20 +31,30 @@ nav {
     border-radius: 15px;
     grid-column: 1 / -1;
     grid-row: 1 / 2;
-    padding: 5px;
-    margin: 10px 0px;
+    padding: 8px;
+    margin: 0px 0px 5px 0px;
     position: sticky;
-    top: 20px;
+    top: 15px;
     display: flex;
     justify-content: space-between;
 }
-nav > div {
-    color: white;
+nav > button {
+    color: #78E5D5;
     font-size: 20px;
     text-align: center;
     border-radius: 8px;
     padding: 3px;
-    margin: 0 10px 0 10px;
+    margin: 0 30px 0 30px;
+    background-color: #665A50;  
+}
+#product-container {
+    border: 2px dashed white;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    width: 100%;
+    margin: 5px;
 }
 .product {
     background-color: #E6AB77;
@@ -75,7 +85,7 @@ nav > div {
 }
 .container {
     margin: 10px;
-    width: 400px;
+    width: 410px;
     height: 250px;
     border: 1px solid #ccc;
     overflow: hidden;
@@ -91,6 +101,8 @@ nav > div {
     background-color:  #268082;
     padding: 8px;
     font-size: 20px;
+    width: 410px;
+    height: 190px;
 }
 .base-bar {
     background-color: #665A50;
@@ -100,6 +112,8 @@ nav > div {
 .color-display {
     background-color: #6BFAFF;
 }
+
+
 /* #dice-bag {
     grid-column: 1 / 2;
 }
