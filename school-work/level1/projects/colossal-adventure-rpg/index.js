@@ -1,7 +1,8 @@
 const readline = require("readline-sync");
-let health = 50;
+let health = 10;
 let damage = 8;
 let pack = [];
+let dead = false
 const playerName = readline.question("Welcome to the Colossal Adventure RPG! \nWhat is your name? ");
 console.log(`\nHello ${playerName}! You will need to make it through the forest to win. \nYou start with 50hp. Good luck!`);
 function Charactor(name, hp, attack, inventory, death) {
@@ -27,6 +28,13 @@ let traveled = 1;
 let distance = 30;
 let i = 0;
 while( i <= 100 ){
+    if(user.hp <= 0){
+        dead = true
+        console.log(`Although you escaped, you died from your injuries. You lose.`)
+    }
+    if(dead === true){
+        i = 101
+    } 
     const walk = readline.question(`\nYou are ${distance} steps from the other end of the forest. What would you like to do? \nPress 'w' to walk forward. Press 'p' to open your pack. `);
 
     if( traveled === 30 ){
@@ -40,7 +48,7 @@ while( i <= 100 ){
         let fight = Math.floor(Math.random() * 3);
         if( fight === 0 & traveled <= 9 ){
             let enemyGen = Math.floor(Math.random() * 12);
-
+            
             if( enemyGen === 0 || enemyGen === 1){
                 console.log(`\nA wild ${enemy3.name} has appeared in front of you!`);
                 let j = enemy3.hp;
@@ -48,7 +56,11 @@ while( i <= 100 ){
                 while(j > 0){
                     console.log(`\nWhat would you like to do?`);
                     const fight = readline.question(" \nPress 'a' to attack. Press 'p' to open your pack. Press 'r' to try to run! ");
-                    if(fight === "a" || fight === "A"){
+                    if(user.hp <= 0){
+                        j = 0
+                        dead = true
+                        console.log(`you were defeated by the ${enemy3.name}. You have lost.`)
+                    }else if(fight === "a" || fight === "A"){
                         console.log(`\nYou attack dealing ${user.attack} damage to the ${enemy3.name}.`)
                         j = j - user.attack;
                         enemyHealth = enemyHealth - user.attack;
@@ -56,11 +68,12 @@ while( i <= 100 ){
                             console.log(enemy3.death);
                         }else{
                             console.log(`\nThe ${enemy3.name} attacks back! It deals ${enemy3.attack} points of damage to you.`)
-                            health = health - enemy3.attack;
+                            user.hp = user.hp - enemy3.attack;
                         }
+                        console.log(user.hp)
                     }else if(fight === "r" || fight === "R"){
                         console.log(`\nYou try to get away, but the ${enemy3.name} still makes an attack! You take ${enemy3.attack} points of damage.`);
-                        health = health - enemy3.attack;
+                        user.hp = user.hp - enemy3.attack;
                         let esc = Math.floor(Math.random() * 2);
                         if(esc === 0){
                             j = 0;
@@ -87,7 +100,11 @@ while( i <= 100 ){
                 while( j > 0 ){
                     console.log(`\nWhat would you like to do?`);
                     const fight = readline.question(" \nPress 'a' to attack. Press 'p' to open your pack. Press 'r' to try to run! ");
-                    if( fight === "a" || fight === "A" ){
+                    if(user.hp <= 0){
+                        j = 0
+                        dead = true
+                        console.log(`you were defeated by the ${enemy2.name}. You have lost.`)
+                    }else if( fight === "a" || fight === "A" ){
                         console.log(`\nYou attack dealing ${user.attack} damage to the ${enemy2.name}.`);
                         j = j - user.attack;
                         enemyHealth = enemyHealth - user.attack;
@@ -95,11 +112,12 @@ while( i <= 100 ){
                             console.log(enemy2.death);
                         }else{
                             console.log(`\nThe ${enemy2.name} attacks back! It deals ${enemy2.attack} points of damage to you.`);
-                            health = health - enemy2.attack;
+                            user.hp = user.hp - enemy2.attack;
                         }
+                        console.log(user.hp)
                     }else if( fight === "r" || fight === "R" ){
                         console.log(`\nYou try to get away, but the ${enemy2.name} still makes an attack! You take ${enemy2.attack} points of damage.`);
-                        health = health - enemy2.attack;
+                        user.hp = user.hp - enemy2.attack;
                         let esc = Math.floor(Math.random() * 2);
                         if( esc === 0 ){
                             j = 0;
@@ -126,7 +144,11 @@ while( i <= 100 ){
                 while( j > 0 ){
                     console.log(`\nWhat would you like to do?`);
                     const fight = readline.question(" \nPress 'a' to attack. Press 'p' to open your pack. Press 'r' to try to run! ");
-                    if( fight === "a" || fight === "A" ){
+                    if(user.hp <= 0){
+                        j = 0
+                        dead = true
+                        console.log(`you were defeated by the ${enemy1.name}. You have lost.`)
+                    }else if( fight === "a" || fight === "A" ){
                         console.log(`\nYou attack dealing ${user.attack} damage to the ${enemy1.name}.`);
                         j = j - user.attack;
                         enemyHealth = enemyHealth - user.attack;
@@ -134,11 +156,12 @@ while( i <= 100 ){
                             console.log(enemy1.death);
                         }else{
                             console.log(`\nThe ${enemy1.name} attacks back! It deals ${enemy1.attack} points of damage to you.`);
-                            health = health - enemy1.attack;
+                            user.hp = user.hp - enemy1.attack;
                         }
+                        console.log(user.hp)
                     }else if( fight === "r" || fight === "R" ){
                         console.log(`\nYou try to get away, but the ${enemy1.name} still makes an attack! You take ${enemy1.attack} points of damage.`);
-                        health = health - enemy1.attack;
+                        user.hp = user.hp - enemy1.attack;
                         let esc = Math.floor(Math.random() * 2);
                         if( esc === 0 ){
                             j = 0;
@@ -166,6 +189,7 @@ while( i <= 100 ){
         console.log("\nInvalid Input");
     }
     i++;
+    
 }
 
 
