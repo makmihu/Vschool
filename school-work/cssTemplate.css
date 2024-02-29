@@ -1,0 +1,57 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    margin: 10px;
+    background-color: #F0A3A4;
+}
+header {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    margin: 10px;
+    margin-left: 70px;
+    margin-right: 70px;
+    text-align: center;
+    background-color: #330F0F;
+    color: #C5A7A7;
+    padding: 10px;
+}
+
+colors1 {
+    color: #F0A3A4;
+    color: #C5A7A7;
+    color: #9B7A7A;
+    color: #704646;
+    color: #462020;
+    color: #330F0F;
+}
+
+colors2 {
+    color: #95F5D5;
+    color: #517569;
+    color: #9CB5AD;
+    color: #A08D89;
+    color: #4B2E27;
+    color: #F5A895;
+}
+
+colors3 {
+    color: #BCF0F5;
+    color: #6F9CA0;
+    color: #1B474B;
+    color: #75553E;
+    color: #B59E8D;
+    color: #F5D4BC;
+
+}
+
+buisness colors current {
+    color: #6BFAFF;
+    color: #78E5D5;
+    color: #268082;
+    color: #665A50;
+    color: #ab6157;
+    color: #E68477;
+    color: #E6AB77;
+    color: #ccc;
+}
