@@ -12,9 +12,11 @@ function formAlert() {
     var diet = [];
     if (form.elements['vegan'].checked) {
         diet.push("vegan");
-    } else if (form.elements['gluten'].checked) {
+    } 
+    if (form.elements['gluten'].checked) {
         diet.push(document.getElementById('gluten').value);
-    } else if (form.elements['paleo'].checked) {
+    } 
+    if (form.elements['paleo'].checked) {
         diet.push(document.getElementById('paleo').value);
     }
 

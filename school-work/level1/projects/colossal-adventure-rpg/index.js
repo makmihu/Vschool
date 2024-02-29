@@ -46,7 +46,7 @@ while( i <= 100 ){
         traveled++
         distance--
         let fight = Math.floor(Math.random() * 3);
-        if( fight === 0 & traveled <= 9 ){
+        if( fight === 0 & traveled <= 30 ){
             let enemyGen = Math.floor(Math.random() * 12);
             
             if( enemyGen === 0 || enemyGen === 1){
