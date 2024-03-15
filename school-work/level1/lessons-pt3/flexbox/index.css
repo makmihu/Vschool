@@ -10,6 +10,7 @@
     align-items: center;
     height: 200px;
     text-align: center;
+    
     margin: 0 10px;
 }
 #flex-container > div:nth-child(1){
